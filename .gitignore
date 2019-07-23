@@ -8,6 +8,9 @@
 # VS Code
 .vscode/
 
+#IDE
+.idea/
+
 # Logs
 logs
 *.log
