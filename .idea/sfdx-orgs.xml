@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SFDXOrgManager">
+    <option name="conventionalOrgs">
+      <SFDXConventionalOrg>
+        <option name="accessToken" value="c90e08a2ad58534a7fa7eb31f9c7856b208eb8ad8c1868c1bb2cc8e4c14b3fde47480867ce5259a5f3515478d6bcb129b538a3bd25cbde6d34e2962d5a9867bfc0f597978f84a9886a0db59cfaedb941551576b5b2dd7cc8e6dc3c4ca8efd73a03838f849c9987ef4de3370360b81000df6e3dfeefd5:e1e0a52c00b5f36fded81d14502928cd" />
+        <option name="alias" value="DevTrigger" />
+        <option name="clientId" value="PlatformCLI" />
+        <option name="connectedStatus" value="Connected" />
+        <option name="defaultDevHubUsername" value="true" />
+        <option name="defaultMarker" value="(D)" />
+        <option name="devHub" value="true" />
+        <option name="instanceUrl" value="https://eu26.salesforce.com" />
+        <option name="lastUsed" value="1563887071902" />
+        <option name="loginUrl" value="https://login.salesforce.com" />
+        <option name="orgId" value="00D2p0000014EffEAE" />
+        <option name="username" value="asshdevedit4884@gmail.com" />
+      </SFDXConventionalOrg>
+      <SFDXConventionalOrg>
+        <option name="accessToken" value="88a5a7466de6bb177e47baad476c132da122a303a854bef6ec14dcd209bc4e356afecc0b084c65e66db92693ba11cbbdd55bad47e82a8a478ceb6ade31ee37e95622bc3846b6b46d2a32661514c4f78bc1c804370bd9c8c01a94e895c9f7570e7f703d2794e002008f78a333fbf893b7d585948ce077:7beaa1c9ce865087aa41c124f28a8b9a" />
+        <option name="alias" value="lwcPg" />
+        <option name="clientId" value="PlatformCLI" />
+        <option name="connectedStatus" value="Connected" />
+        <option name="devHub" value="true" />
+        <option name="instanceUrl" value="https://test454647-dev-ed.my.salesforce.com" />
+        <option name="lastUsed" value="1561368426807" />
+        <option name="loginUrl" value="https://login.salesforce.com" />
+        <option name="orgId" value="00D2p0000013Q64EAE" />
+        <option name="username" value="assh4884@brave-hawk-lcovja.com" />
+      </SFDXConventionalOrg>
+      <SFDXConventionalOrg>
+        <option name="accessToken" value="1568f1d22bbc9c946b10b4bbe15e7dbb1f5141a5f7fda5cbed1395b6b6707926b796e10060d53fdfeda02e78044adef80084a5db56901eba453d17f240d38fb40535b620d942a9180ec90c87033997457b3fc142032a3f9e4b862e150a207e3553f6dcb46ecb8f6d5c955fadd6176c3ad468035e1c42:08ed7714f369718a8a42459c56cd80bc" />
+        <option name="alias" value="pgForTest" />
+        <option name="clientId" value="PlatformCLI" />
+        <option name="connectedStatus" value="Connected" />
+        <option name="devHub" value="true" />
+        <option name="instanceUrl" value="https://cunning-goat-432208-dev-ed.my.salesforce.com" />
+        <option name="lastUsed" value="1561124811395" />
+        <option name="loginUrl" value="https://login.salesforce.com" />
+        <option name="orgId" value="00D1r000000pXX8EAM" />
+        <option name="username" value="assh4884@cunning-goat-432208.com" />
+      </SFDXConventionalOrg>
+      <SFDXConventionalOrg>
+        <option name="accessToken" value="ca7e71fbf4c6c83f616628b3151f27c4e635cb0ca54816bdd992c813509a0d144dec05a1adb79171c0689517297a09fe703bcbd27fde2d6587b107ff0600f4736bbd46a683b148cfb253d5685c4128dbd2be9aa042eb3511e9959c63b32d5842d1f177f416ad7d25b469ac622fe4db84fa780b093712:4f1d7b6ed54b229764e210b2e3b878d5" />
+        <option name="alias" value="project1" />
+        <option name="clientId" value="PlatformCLI" />
+        <option name="connectedStatus" value="Connected" />
+        <option name="devHub" value="true" />
+        <option name="instanceUrl" value="https://alexdeved-dev-ed.my.salesforce.com" />
+        <option name="lastUsed" value="1560866740089" />
+        <option name="loginUrl" value="https://login.salesforce.com" />
+        <option name="orgId" value="00D2p000000P0IVEA0" />
+        <option name="username" value="alexdevorgtest4884@gmail.com" />
+      </SFDXConventionalOrg>
+    </option>
+    <option name="scratchOrgs">
+      <SFDXScratchOrg>
+        <option name="accessToken" value="6b1938b866cf012f7b9d1518aed8bd7a38ed54e8e05a820c1c61862509a51ef317e560e8da80bb2472b823a2de54ac48289363c395ad8584ecf4a8cba4501ee57a1e9cf9746cc00166ef5afbd054e735b337d04d2f63f28c6c40bf2125bae8cd35d2fc65656a3462db5074255a5fd59dbca949bc7b6f:63cf891d125c1b24668329b2a695ca4f" />
+        <option name="alias" value="bigObj" />
+        <option name="attributes">
+          <SFDXScratchOrgAttributes>
+            <option name="type" value="ScratchOrgInfo" />
+            <option name="url" value="/services/data/v46.0/sobjects/ScratchOrgInfo/2SR2p000000g09RGAQ" />
+          </SFDXScratchOrgAttributes>
+        </option>
+        <option name="clientId" value="PlatformCLI" />
+        <option name="connectedStatus" value="Unknown" />
+        <option name="created" value="1562934630794" />
+        <option name="createdBy" value="alexdevorgtest4884@gmail.com" />
+        <option name="createdDate" value="1562934623000" />
+        <option name="createdOrgInstance" value="CS83" />
+        <option name="devHubOrgId" value="00D2p000000P0IVEA0" />
+        <option name="devHubUsername" value="alexdevorgtest4884@gmail.com" />
+        <option name="edition" value="Developer" />
+        <option name="expirationDate" value="1565481600000" />
+        <option name="instanceUrl" value="https://enterprise-inspiration-5790-dev-ed.cs83.my.salesforce.com" />
+        <option name="lastUsed" value="1562934631706" />
+        <option name="loginUrl" value="https://CS83.salesforce.com" />
+        <option name="orgId" value="00D4E0000009VPgUAM" />
+        <option name="orgName" value="Demo Company" />
+        <option name="password" value="7a04dbacf45dac53c14c295107868d52:a56135be5d9a63eb00ae20261a954917" />
+        <option name="signupUsername" value="test-znwau8ntav1v@example.com" />
+        <option name="status" value="Active" />
+        <option name="username" value="test-znwau8ntav1v@example.com" />
+      </SFDXScratchOrg>
+      <SFDXScratchOrg>
+        <option name="accessToken" value="02f0078c9848e53c1000c00bcc72b1258842cf25ed719277d390c2be1910ffe7745f904a6d982d5bd824a02a8ef9c62af37febaae316256a20d37b3f70a427af36b3dd6bd8f01a845638847c08b573825df5add882964edf5f5b791868f3d5c3184e3d3de8e355846573a609bd438e9f3cea18ca8e19:fbf0bfdc5a2a7add71186f2aefe7bde1" />
+        <option name="alias" value="ebaikesTrail" />
+        <option name="attributes">
+          <SFDXScratchOrgAttributes>
+            <option name="type" value="ScratchOrgInfo" />
+            <option name="url" value="/services/data/v46.0/sobjects/ScratchOrgInfo/2SR2p000000fzFYGAY" />
+          </SFDXScratchOrgAttributes>
+        </option>
+        <option name="clientId" value="PlatformCLI" />
+        <option name="connectedStatus" value="Unknown" />
+        <option name="created" value="1561450299214" />
+        <option name="createdBy" value="assh4884@brave-hawk-lcovja.com" />
+        <option name="createdDate" value="1561450289000" />
+        <option name="createdOrgInstance" value="CS89" />
+        <option name="devHubOrgId" value="00D2p0000013Q64EAE" />
+        <option name="devHubUsername" value="assh4884@brave-hawk-lcovja.com" />
+        <option name="edition" value="Developer" />
+        <option name="expirationDate" value="1564012800000" />
+        <option name="instanceUrl" value="https://app-force-202-dev-ed.cs89.my.salesforce.com/" />
+        <option name="lastUsed" value="1561450300410" />
+        <option name="loginUrl" value="https://CS89.salesforce.com" />
+        <option name="orgId" value="00D0E0000009sbXUAQ" />
+        <option name="orgName" value="Demo Company" />
+        <option name="signupUsername" value="test-pmissw5lvvmf@example.com" />
+        <option name="status" value="Active" />
+        <option name="username" value="test-pmissw5lvvmf@example.com" />
+      </SFDXScratchOrg>
+      <SFDXScratchOrg>
+        <option name="accessToken" value="cb55bd6c80d574c37fe964aeba984897f9cf20e6865cde79c108f369534394c904f49409a2118de2ca3325bd90339f6ac0a976c88d11820ea9cb760443a51a2a9c9a0e680f5a5933bcda53c4e8a3a5a0f4ac4cbc23611e3ffe9a9ce099bb7495a81d900cc72adf77efe725af74eb58f6582b75f4d3a3:53723632d289b5373dce29472b77a38c" />
+        <option name="alias" value="lwc-recipes" />
+        <option name="attributes">
+          <SFDXScratchOrgAttributes>
+            <option name="type" value="ScratchOrgInfo" />
+            <option name="url" value="/services/data/v46.0/sobjects/ScratchOrgInfo/2SR2p000000fzxpGAA" />
+          </SFDXScratchOrgAttributes>
+        </option>
+        <option name="clientId" value="PlatformCLI" />
+        <option name="connectedStatus" value="Unknown" />
+        <option name="created" value="1562336381541" />
+        <option name="createdBy" value="assh4884@brave-hawk-lcovja.com" />
+        <option name="createdDate" value="1562336374000" />
+        <option name="createdOrgInstance" value="CS84" />
+        <option name="devHubOrgId" value="00D2p0000013Q64EAE" />
+        <option name="devHubUsername" value="assh4884@brave-hawk-lcovja.com" />
+        <option name="edition" value="Developer" />
+        <option name="expirationDate" value="1564876800000" />
+        <option name="instanceUrl" value="https://flow-customer-9609-dev-ed.cs84.my.salesforce.com/" />
+        <option name="lastUsed" value="1562336382501" />
+        <option name="loginUrl" value="https://CS84.salesforce.com" />
+        <option name="orgId" value="00D5E0000009Sr0UAE" />
+        <option name="orgName" value="LWC Recipes" />
+        <option name="signupUsername" value="test-pfvasxqtzhlk@example.com" />
+        <option name="status" value="Active" />
+        <option name="username" value="test-pfvasxqtzhlk@example.com" />
+      </SFDXScratchOrg>
+      <SFDXScratchOrg>
+        <option name="accessToken" value="2b20a77bf81c6c9061ca88f055b47acade0b868ca80e2b24bcc1ff72a42568272142e5850a6467b3c4d146e56f1831f9adca8c9b05766281084ae1208531221b09f83d81ec2e2e1dd1a062ad3c2620f5adf25c8ee1bac1a26f9256280293c32a8043b4caae40cc3d771f4a498bbac62fdd61a71e8b9c:7768f7e4ba45f1efe9e1036eb83517b7" />
+        <option name="alias" value="lwcLearn" />
+        <option name="attributes">
+          <SFDXScratchOrgAttributes>
+            <option name="type" value="ScratchOrgInfo" />
+            <option name="url" value="/services/data/v46.0/sobjects/ScratchOrgInfo/2SR2p000000fzveGAA" />
+          </SFDXScratchOrgAttributes>
+        </option>
+        <option name="clientId" value="PlatformCLI" />
+        <option name="connectedStatus" value="Unknown" />
+        <option name="created" value="1562316992472" />
+        <option name="createdBy" value="assh4884@brave-hawk-lcovja.com" />
+        <option name="createdDate" value="1562316984000" />
+        <option name="createdOrgInstance" value="CS83" />
+        <option name="devHubOrgId" value="00D2p0000013Q64EAE" />
+        <option name="devHubUsername" value="assh4884@brave-hawk-lcovja.com" />
+        <option name="edition" value="Developer" />
+        <option name="expirationDate" value="1564876800000" />
+        <option name="instanceUrl" value="https://agility-fun-6112-dev-ed.cs83.my.salesforce.com" />
+        <option name="lastUsed" value="1562316993679" />
+        <option name="loginUrl" value="https://CS83.salesforce.com" />
+        <option name="orgId" value="00D4E0000009ScDUAU" />
+        <option name="orgName" value="Demo Company" />
+        <option name="signupUsername" value="test-t96t1r3uljng@example.com" />
+        <option name="status" value="Active" />
+        <option name="username" value="test-t96t1r3uljng@example.com" />
+      </SFDXScratchOrg>
+    </option>
+  </component>
+</project>
