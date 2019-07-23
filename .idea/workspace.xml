@@ -2,7 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0755df0c-a735-43c2-8921-1cc599e4e5c6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/force-app/main/default/classes/COM_TriggerHandlerImplementation.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/force-app/main/default/classes/COM_TriggerHandlerImplementation.cls-meta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/force-app/main/default/classes/COM_TriggerHandlerImplementationTest.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/force-app/main/default/classes/COM_TriggerHandlerImplementationTest.cls-meta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/force-app/main/default/classes/COM_TriggerPattern_API.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/force-app/main/default/classes/COM_TriggerPattern_API.cls-meta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/force-app/main/default/classes/COM_TriggerPattern_API_Test.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/force-app/main/default/classes/COM_TriggerPattern_API_Test.cls-meta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/force-app/main/default/classes/COM_TriggerPattern_DataAccesssor.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/force-app/main/default/classes/COM_TriggerPattern_DataAccesssor.cls-meta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/force-app/main/default/classes/COM_TriggerPattern_DataAccesssorTest.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/force-app/main/default/classes/COM_TriggerPattern_DataAccesssorTest.cls-meta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/force-app/main/default/classes/COM_TriggerPattern_Service.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/force-app/main/default/classes/COM_TriggerPattern_Service.cls-meta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/force-app/main/default/classes/COM_TriggerPattern_ServiceTest.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/force-app/main/default/classes/COM_TriggerPattern_ServiceTest.cls-meta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/force-app/main/default/classes/ICOM_TriggerHandler.cls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/force-app/main/default/classes/ICOM_TriggerHandler.cls-meta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/force-app/main/default/customMetadata/Trigger_Handler_Assignment.My_Object_Test_Coverage_c_Common.md-meta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/force-app/main/default/layouts/Trigger_Handler_Assignment__mdt-Trigger Handler Assignment Layout.layout-meta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/force-app/main/default/objects/Trigger_Handler_Assignment__mdt/Trigger_Handler_Assignment__mdt.object-meta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/force-app/main/default/objects/Trigger_Handler_Assignment__mdt/fields/HandlerName__c.field-meta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/force-app/main/default/objects/Trigger_Handler_Assignment__mdt/fields/IsActive__c.field-meta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/force-app/main/default/objects/Trigger_Handler_Assignment__mdt/fields/Object_API_Name__c.field-meta.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/force-app/main/default/objects/Trigger_Handler_Assignment__mdt/fields/SequenceNumber__c.field-meta.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.forceignore" beforeDir="false" afterPath="$PROJECT_DIR$/.forceignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -14,17 +40,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>source</find>
+      <find>Error_Log__c</find>
+      <find>errorLogList</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -33,13 +56,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/.gitignore" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+        <option value="$PROJECT_DIR$/1_Master/build.properties" />
+        <option value="$PROJECT_DIR$/.forceignore" />
+        <option value="$PROJECT_DIR$/force-app/main/default/classes/COM_TriggerPattern_Service.cls" />
       </list>
     </option>
   </component>
@@ -72,9 +91,19 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/force-app/main/default" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Project\TriggerPattern\TriggerPattern\force-app\main\default" />
+      <recent name="D:\Project\TriggerPattern\TriggerPattern\1_Master\retrieveSource" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Project\TriggerPattern\TriggerPattern\TriggerPattern_Examp\src" />
+      <recent name="D:\Project\TriggerPattern\TriggerPattern\TriggerPattern_Examp" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -104,25 +133,33 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1563887324650</updated>
-      <workItem from="1563887326026" duration="539000" />
+      <workItem from="1563887326026" duration="5580000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="539000" />
+    <option name="totallyTimeSpent" value="5580000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Log Manager" />
       <window_info anchor="bottom" id="Execute Anonymous" weight="0.32936078" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.503792" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.41386783" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Salesforce DX" weight="0.32936078" />
       <window_info anchor="bottom" id="Messages" weight="0.32936078" />
@@ -132,7 +169,7 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
       <window_info anchor="right" id="Schema Explorer" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -143,13 +180,68 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.forceignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+        <state relative-caret-position="210">
+          <caret line="10" column="4" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1_Master/retrieveSource/package.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1_Master/retrieveSource/classes/ICOM_TriggerHandler.cls">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1_Master/build.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TriggerPattern_Examp/src/package.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-73" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sfdx-project.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/project-scratch-def.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.forceignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.sfdx/sfdx-config.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.sfdx/orgs/test-nz6ajiykhmb7@example.com/metadataTypeInfos.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="55" column="36" lean-forward="true" selection-start-line="55" selection-start-column="36" selection-end-line="55" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.sfdx/orgs/asshdevedit4884@gmail.com/metadataTypeInfos.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/force-app/main/default/classes/ICOM_TriggerHandler.cls">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/force-app/main/default/classes/COM_TriggerPattern_Service.cls">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="46" column="23" lean-forward="true" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
         </state>
       </provider>
     </entry>
