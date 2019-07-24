@@ -11,6 +11,12 @@
 #IDE
 .idea/
 
+#Iml
+force-app/force-app.iml
+
+#lib
+lib/
+
 # Logs
 logs
 *.log

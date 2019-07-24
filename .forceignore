@@ -13,3 +13,6 @@ package.xml
 
 #herznaet4to
 **force-app.iml
+
+#LIB
+lib/
