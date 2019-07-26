@@ -8,5 +8,10 @@ public with sharing class ItemTriggerHandler extends Util_TriggerHandlerImplemen
 		System.debug(Trigger.new);
 	}
 
+//	@Future
+//	public override void onAfterInsertFutureFunction() {
+//		System.debug('onAfterInsertFutureFunction >>>>>');
+//	}
+
 
 }

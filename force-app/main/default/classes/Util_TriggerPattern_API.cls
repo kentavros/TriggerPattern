@@ -5,7 +5,7 @@ public class Util_TriggerPattern_API {
 
 	private static String objectName = setObjectName();
 
-	//TODO: Need to delete, method isn't used
+	//TODO: Need to delete, method isn't used - or?
 	public static Util_ITriggerHandler[] getObjectTriggerHandlers() {
 
 		return Util_TriggerPattern_Service.getObjectTriggerHandlers(objectName);
@@ -14,7 +14,7 @@ public class Util_TriggerPattern_API {
 
 	public static void executeObjectTriggerHandlers() {
 
-		Util_TriggerPattern_Service.executeObjectTriggerHandlers(objectName);
+		Util_TriggerPattern_Service.initObjectTriggerHandlers(objectName);
 
 	}
 

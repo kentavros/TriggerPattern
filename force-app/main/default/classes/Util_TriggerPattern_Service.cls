@@ -3,45 +3,20 @@
  */
 public with sharing class Util_TriggerPattern_Service {
 
-	public static void executeObjectTriggerHandlers(String objectName) {
+	public static void initObjectTriggerHandlers(String objectName) {
 
 		Util_ITriggerHandler[] handlerList = getObjectTriggerHandlers(objectName);
 
-		//TODO: DELETE LOOP FOR - Queueble or some async
-		for (Util_ITriggerHandler handler : handlerList) {
 
-			if (Trigger.isBefore) {
 
-				if (Trigger.isInsert){
-					handler.onBeforeInsertFunction();
-				}
-				else if (Trigger.isUpdate) {
-					handler.onBeforeUpdateFunction();
-				}
-				else if (Trigger.isDelete) {
-					handler.onBeforeDeleteFunction();
-				}
+		if (!handlerList.isEmpty()) {
 
-			}
+			executeHandlerSynchronously(handlerList.remove(0));
 
-			if (Trigger.isAfter) {
-
-				if (Trigger.isInsert) {
-					handler.onAfterInsertFunction();
-				}
-				else if (Trigger.isUpdate) {
-					handler.onAfterUpdateFunction();
-				}
-				else if (Trigger.isDelete) {
-					handler.onAfterDeleteFunction();
-				}
-				else if (Trigger.isUndelete) {
-					handler.onAfterUndeleteFunction();
-				}
-
-			}
+			executeHandlerAsynchronously(handlerList);
 
 		}
+
 
 
 	}
@@ -68,6 +43,91 @@ public with sharing class Util_TriggerPattern_Service {
 		}
 
 		return result;
+	}
+
+	private static void executeHandlerSynchronously(Util_ITriggerHandler handler) {
+
+		if (Trigger.isBefore) {
+
+			if (Trigger.isInsert){
+				handler.onBeforeInsertFunction();
+			}
+			else if (Trigger.isUpdate) {
+				handler.onBeforeUpdateFunction();
+			}
+			else if (Trigger.isDelete) {
+				handler.onBeforeDeleteFunction();
+			}
+
+		}
+
+		if (Trigger.isAfter) {
+
+			if (Trigger.isInsert) {
+				handler.onAfterInsertFunction();
+			}
+			else if (Trigger.isUpdate) {
+				handler.onAfterUpdateFunction();
+			}
+			else if (Trigger.isDelete) {
+				handler.onAfterDeleteFunction();
+			}
+			else if (Trigger.isUndelete) {
+				handler.onAfterUndeleteFunction();
+			}
+
+		}
+
+	}
+
+//	//TODO !!!! SET THIS VALUE BEFORE EXECUTE QUEUEAble
+//	 private static void setTriggerValues(Util_ITriggerHandler[] handlerList) {
+//
+//		 if (!handlerList.isEmpty()) {
+//
+//			 for (Util_ITriggerHandler handler : handlerList) {
+//
+//				 handler.setTriggerNew(Trigger.new);
+//				 handler.setTriggerOld(Trigger.old);
+//				 handler.setTriggerNewMap(Trigger.newMap);
+//				 handler.setTriggerOldMap(Trigger.oldMap);
+////				 System.enqueueJob(handler);
+//			 }
+//		 }
+//	 }
+
+	private static void executeHandlerAsynchronously(Util_ITriggerHandler[] handlerList) {
+
+		for (Util_ITriggerHandler handler : handlerList) {
+
+			if (Trigger.isAfter) {
+
+				if (Trigger.isInsert) {
+					handler.setTriggerNew(Trigger.new);
+					handler.setTriggerNewMap(Trigger.newMap);
+				}
+				else if (Trigger.isUpdate) {
+					handler.setTriggerNew(Trigger.new);
+					handler.setTriggerOld(Trigger.old);
+					handler.setTriggerNewMap(Trigger.newMap);
+					handler.setTriggerOldMap(Trigger.oldMap);
+				}
+				else if (Trigger.isDelete) {
+					handler.setTriggerOld(Trigger.old);
+					handler.setTriggerOldMap(Trigger.oldMap);
+				}
+				else if (Trigger.isUndelete) {
+					handler.setTriggerNew(Trigger.new);
+					handler.setTriggerNewMap(Trigger.newMap);
+				}
+
+				Id jobId = System.enqueueJob(handler);
+				System.debug(jobId);
+
+			}
+
+		}
+
 	}
 
 

@@ -3,6 +3,14 @@
  */
 global interface Util_ITriggerHandler {
 
+	void setTriggerNew(SObject[] triggerNew);
+
+	void setTriggerOld(SObject[] triggerOld);
+
+	void setTriggerNewMap(Map<Id, SObject> triggerNewMap);
+
+	void setTriggerOldMap(Map<Id, SObject> triggerOldMap);
+
 	void onBeforeInsertFunction();
 
 	void onBeforeUpdateFunction();
@@ -16,4 +24,15 @@ global interface Util_ITriggerHandler {
 	void onAfterDeleteFunction();
 
 	void onAfterUndeleteFunction();
+
+//	/*
+//	 * Future methods
+//	 */
+//	void onAfterInsertFutureFunction();
+//
+//	void onAfterUpdateFutureFunction();
+//
+//	void onAfterDeleteFutureFunction();
+//
+//	void onAfterUndeleteFutureFunction();
 }
