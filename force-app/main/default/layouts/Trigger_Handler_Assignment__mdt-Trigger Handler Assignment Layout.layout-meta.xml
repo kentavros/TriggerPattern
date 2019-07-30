@@ -31,8 +31,8 @@
                 <field>SequenceNumber__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Async__c</field>
+                <behavior>Required</behavior>
+                <field>Handler_Execution__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>

@@ -5,11 +5,11 @@ public class Util_TriggerPattern_API {
 
 	private static String objectName = setObjectName();
 
-	//TODO: Need to delete, method isn't used - or?
-	public static Util_ITriggerHandler[] getObjectTriggerHandlers() {
-
-		return Util_TriggerPattern_Service.getObjectTriggerHandlers(objectName);
-	}
+//	//TODO: Need to delete, method isn't used - or?
+//	public static Util_ITriggerHandler[] getObjectTriggerHandlers() {
+//
+//		return Util_TriggerPattern_Service.getObjectTriggerHandlers(objectName);
+//	}
 
 
 	public static void executeObjectTriggerHandlers() {

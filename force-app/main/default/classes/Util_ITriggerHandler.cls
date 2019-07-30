@@ -3,13 +3,21 @@
  */
 global interface Util_ITriggerHandler {
 
-	void setTriggerNew(SObject[] triggerNew);
+//	void setTriggerNew(SObject[] triggerNew);
+//
+//	void setTriggerOld(SObject[] triggerOld);
+//
+//	void setTriggerNewMap(Map<Id, SObject> triggerNewMap);
+//
+//	void setTriggerOldMap(Map<Id, SObject> triggerOldMap);
 
-	void setTriggerOld(SObject[] triggerOld);
+	void setUpdatedRecordsFromList(SObject[] updatedRecords);
 
-	void setTriggerNewMap(Map<Id, SObject> triggerNewMap);
+	void setUpdatedRecordsFromMap(Map<Id, SObject> updatedRecords);
 
-	void setTriggerOldMap(Map<Id, SObject> triggerOldMap);
+	SObject[] getUpdatedRecordList();
+
+	Map<Id, SObject> getUpdatedRecordsMap();
 
 	void onBeforeInsertFunction();
 

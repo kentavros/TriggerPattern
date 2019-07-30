@@ -3,26 +3,75 @@
  */
 public virtual class Util_TriggerHandlerImplementation implements Util_ITriggerHandler, Queueable {
 
-	protected SObject[] triggerNew;
-	protected SObject[] triggerOld;
-	protected Map<Id, SObject> triggerNewMap;
-	protected Map<Id, SObject> triggerOldMap;
+//	protected SObject[] triggerNew;
+//	protected SObject[] triggerOld;
+//	protected Map<Id, SObject> triggerNewMap;
+//	protected Map<Id, SObject> triggerOldMap;
 
-	public void setTriggerNew(SObject[] triggerNew) {
-		this.triggerNew = triggerNew;
+	private SObject[] updatedRecordsList = new SObject[]{};
+	private Map<Id, SObject> updatedRecordsMap = new Map<Id, SObject>();
+
+//	private Boolean isRecursion = false;
+
+	//TODO METHODS to Interface!!!!!!
+
+//	protected void setRecursion(Boolean value) {
+//		this.isRecursion = value;
+//	}
+//
+//	protected void toggleRecursion() {
+//		this.isRecursion = !this.isRecursion;
+//	}
+//
+//	protected Boolean getRecursion() {
+//
+//		return this.isRecursion;
+//	}
+
+
+	public virtual void setUpdatedRecordsFromList(SObject[] records) {
+
+		for (SObject record : records) {
+
+			if (record.Id != null) {
+
+				this.updatedRecordsMap.put(record.Id, record);
+
+			}
+
+		}
+
+		this.updatedRecordsList.addAll(records);
 	}
 
-	public void setTriggerOld(SObject[] triggerOld) {
-		this.triggerOld = triggerOld;
+	public virtual SObject[] getUpdatedRecordList() {
+		return this.updatedRecordsList;
 	}
 
-	public void setTriggerNewMap(Map<Id, SObject> triggerNewMap) {
-		this.triggerNewMap = triggerNewMap;
+	public virtual void setUpdatedRecordsFromMap(Map<Id, SObject> records) {
+		this.updatedRecordsMap.putAll(records);
+		this.updatedRecordsList = records.values();
 	}
 
-	public void setTriggerOldMap(Map<Id, SObject> triggerOldMap) {
-		this.triggerOldMap = triggerOldMap;
+	public virtual Map<Id, SObject> getUpdatedRecordsMap() {
+		return this.updatedRecordsMap;
 	}
+
+//	public void setTriggerNew(SObject[] triggerNew) {
+//		this.triggerNew = triggerNew;
+//	}
+//
+//	public void setTriggerOld(SObject[] triggerOld) {
+//		this.triggerOld = triggerOld;
+//	}
+//
+//	public void setTriggerNewMap(Map<Id, SObject> triggerNewMap) {
+//		this.triggerNewMap = triggerNewMap;
+//	}
+//
+//	public void setTriggerOldMap(Map<Id, SObject> triggerOldMap) {
+//		this.triggerOldMap = triggerOldMap;
+//	}
 
 
 	public virtual void onBeforeInsertFunction() {
@@ -55,15 +104,17 @@ public virtual class Util_TriggerHandlerImplementation implements Util_ITriggerH
 
 	public virtual void execute(QueueableContext context) {
 
+		System.debug(updatedRecordsList);
+		System.debug(updatedRecordsList.size());
+		System.debug(updatedRecordsMap);
+		System.debug(updatedRecordsMap.size());
 
-
-
-		System.debug(triggerNew);
-		System.debug(triggerOld);
-		System.debug(triggerNewMap);
-		System.debug(triggerOldMap);
+//	//	TODO Only needed scope of records !
+//		System.debug(triggerNew);
+//		System.debug(triggerOld);
+//		System.debug(triggerNewMap);
+//		System.debug(triggerOldMap);
 	}
-
 
 
 //	@Future

@@ -7,6 +7,10 @@
         <value xsi:type="xsd:string">ItemTriggerHandler</value>
     </values>
     <values>
+        <field>Handler_Execution__c</field>
+        <value xsi:type="xsd:string">Sync</value>
+    </values>
+    <values>
         <field>IsActive__c</field>
         <value xsi:type="xsd:boolean">true</value>
     </values>
