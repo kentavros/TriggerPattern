@@ -20,5 +20,9 @@ public with sharing class ItemTriggerHandler extends Util_TriggerHandlerImplemen
 
 	 }
 
-
+	public override void execute(QueueableContext context) {
+		System.debug(context);
+		System.debug(this.getUpdatedRecordsList());
+		System.debug(this.getUpdatedRecordsMap());
+	}
 }

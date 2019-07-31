@@ -3,7 +3,6 @@
  */
 public without sharing class Util_TriggerPattern_DataAccesssor {
 
-
 	public static Trigger_Handler_Assignment__mdt[] getObjectTriggerHandlersAssignments(String objectName) {
 
 		return [
@@ -14,5 +13,4 @@ public without sharing class Util_TriggerPattern_DataAccesssor {
 		];
 
 	}
-
 }
