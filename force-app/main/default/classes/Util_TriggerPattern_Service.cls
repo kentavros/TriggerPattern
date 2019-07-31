@@ -12,18 +12,16 @@ public with sharing class Util_TriggerPattern_Service {
 		ASYNC_EXECUTION_ALL => 'Async After Sync Execution'
 	};
 	private static final Integer ASYNC_LIMIT = 50;
-	private static Boolean isRecursion = false;
+	private static Boolean isRecursionOnAfter = false;
+	private static Boolean isRecursionOnBefore = false;
 	public static Util_ITriggerHandler syncHandler;
 
 
 	public static void initObjectTriggerHandlers(String objectName) {
-
 		Map<String, Util_ITriggerHandler[]> handlerMap = getObjectTriggerHandlers(objectName);
 
 		executeHandlerSynchronously(handlerMap);
-		executeAsyncHandler(handlerMap);
-//		executeAsyncHandlerAfterUpdate(handlerMap);
-//		executeAsyncHandlerAfterExecution(handlerMap);
+ 		executeAsyncHandler(handlerMap, ASYNC_EXECUTION_ALL);
 
 	}
 
@@ -51,9 +49,7 @@ public with sharing class Util_TriggerPattern_Service {
 			}
 
 		} catch (Exception e) {
-
 			System.debug('Error - getObjectTriggerHandlers: ' + e.getMessage() + ' Line : ' + e.getLineNumber());
-
 		}
 
 		return resultMap;
@@ -61,32 +57,40 @@ public with sharing class Util_TriggerPattern_Service {
 
 	private static void executeHandlerSynchronously(Map<String, Util_ITriggerHandler[]> handlerMap) {
 		if (handlerMap.containsKey(SYNC)) {
-
 			Util_ITriggerHandler handler = handlerMap.get(SYNC)[0];
 
 			if (Trigger.isBefore) {
 
-				if (Trigger.isInsert){
-					handler.onBeforeInsertFunction();
-				}
-				else if (Trigger.isUpdate) {
-					handler.onBeforeUpdateFunction();
-				}
-				else if (Trigger.isDelete) {
-					handler.onBeforeDeleteFunction();
-				}
+//				if (!isRecursionOnBefore) {
+//					isRecursionOnBefore = true;
 
+					if (Trigger.isInsert) {
+						handler.onBeforeInsertFunction();
+					} else if (Trigger.isUpdate) {
+						handler.onBeforeUpdateFunction();
+					} else if (Trigger.isDelete) {
+						handler.onBeforeDeleteFunction();
+					}
+
+//				}
+//				else {
+//					System.debug('RECURSION Before!!!!!');
+//					executeAsyncHandler(handlerMap, ASYNC_UPDATE);
+//				}
 			}
 
 			if (Trigger.isAfter) {
 
-				if (!isRecursion) {
+				if (!isRecursionOnAfter) {
+					isRecursionOnAfter = true;
 
 					if (Trigger.isInsert) {
 						handler.onAfterInsertFunction();
 					}
 					else if (Trigger.isUpdate) {
+
 						handler.onAfterUpdateFunction();
+
 					}
 					else if (Trigger.isDelete) {
 						handler.onAfterDeleteFunction();
@@ -95,29 +99,24 @@ public with sharing class Util_TriggerPattern_Service {
 						handler.onAfterUndeleteFunction();
 					}
 
-					isRecursion = !isRecursion;
 					syncHandler = handler;
-
 				}
-
+				else {
+					System.debug('RECURSION AFTER!!!!!!!!!!!!!!!!!!!');
+					executeAsyncHandler(handlerMap, ASYNC_UPDATE);
+				}
 			}
 
 		}
+
 	}
 
-	private static void executeAsyncHandler(Map<String, Util_ITriggerHandler[]> handlerMap){
+	private static void executeAsyncHandler(Map<String, Util_ITriggerHandler[]> handlerMap, String asyncKey) {
 
-		if (isRecursion || (!isRecursion && Trigger.isAfter)) {
+		if (handlerMap.containsKey(asyncKey) && Trigger.isAfter) {
 
-			SObject[] updatedRecords = getUpdateRecordsForAsyncAll();
+			executeQueueable(handlerMap.get(asyncKey), getUpdateRecordsForAsyncAll());
 
-			if (handlerMap.containsKey(ASYNC_UPDATE)) {
-				executeQueueable(handlerMap.get(ASYNC_UPDATE), updatedRecords);
-			}
-
-			if (handlerMap.containsKey(ASYNC_EXECUTION_ALL)) {
-				executeQueueable(handlerMap.get(ASYNC_EXECUTION_ALL), updatedRecords);
-			}
 		}
 
 	}
@@ -132,40 +131,6 @@ public with sharing class Util_TriggerPattern_Service {
 		}
 	}
 
-//	private static void executeAsyncHandlerAfterUpdate(Map<String, Util_ITriggerHandler[]> handlerMap) {
-//
-//		if (handlerMap.containsKey(ASYNC_UPDATE) && isRecursion && syncHandler != null) {
-//
-//			SObject[] updatedRecords = getUpdateRecordsForAsyncAll();
-//
-//			for (Util_ITriggerHandler handler : handlerMap.get(ASYNC_UPDATE)) {
-//				handler.setUpdatedRecordsFromList(updatedRecords);
-//
-//				Id jobId = System.enqueueJob(handler);
-//				System.debug('Async Update JobID: ' + jobId);
-//
-//			}
-//
-//		}
-//	}
-//
-//	private static void executeAsyncHandlerAfterExecution(Map<String, Util_ITriggerHandler[]> handlerMap) {
-//
-//	 	if (handlerMap.containsKey(ASYNC_EXECUTION_ALL)) {
-//
-//			SObject[] updatedRecords = getUpdateRecordsForAsyncAll();
-//
-//
-//
-//			for (Util_ITriggerHandler handler : handlerMap.get(ASYNC_EXECUTION_ALL)) {
-//				handler.setUpdatedRecordsFromList(updatedRecords);
-//
-//				Id jobId = System.enqueueJob(handler);
-//				System.debug('Async Execution JobID: ' + jobId);
-//			}
-//
-//		}
-//	}
 
 	private static SObject[] getUpdateRecordsForAsyncAll() {
 		SObject[] updatedRecords = new SObject[]{};
@@ -222,6 +187,64 @@ public with sharing class Util_TriggerPattern_Service {
 
 		return assignmentsByType;
 	}
+
+
+
+
+	//	private static void executeAsyncHandler(Map<String, Util_ITriggerHandler[]> handlerMap){
+	//
+	//		if (isRecursion || (!isRecursion && Trigger.isAfter)) {
+	//
+	//			SObject[] updatedRecords = getUpdateRecordsForAsyncAll();
+	//
+	//			if (handlerMap.containsKey(ASYNC_UPDATE)) {
+	//				executeQueueable(handlerMap.get(ASYNC_UPDATE), updatedRecords);
+	//			}
+	//
+	//			if (handlerMap.containsKey(ASYNC_EXECUTION_ALL)) {
+	//				executeQueueable(handlerMap.get(ASYNC_EXECUTION_ALL), updatedRecords);
+	//			}
+	//		}
+	//
+	//	}
+
+
+	//	private static void executeAsyncHandlerAfterUpdate(Map<String, Util_ITriggerHandler[]> handlerMap) {
+	//
+	//		if (handlerMap.containsKey(ASYNC_UPDATE)) {
+	//
+	////			SObject[] updatedRecords = ();
+	//
+	//			executeQueueable(handlerMap.get(ASYNC_UPDATE), getUpdateRecordsForAsyncAll());
+	//
+	////			for (Util_ITriggerHandler handler : handlerMap.get(ASYNC_UPDATE)) {
+	////				handler.setUpdatedRecordsFromList(updatedRecords);
+	////
+	////				Id jobId = System.enqueueJob(handler);
+	////				System.debug('Async Update JobID: ' + jobId);
+	////
+	////			}
+	//
+	//		}
+	//	}
+
+	//	private static void executeAsyncHandlerAfterExecution(Map<String, Util_ITriggerHandler[]> handlerMap) {
+	//
+	//	 	if (handlerMap.containsKey(ASYNC_EXECUTION_ALL)) {
+	//
+	//			SObject[] updatedRecords = getUpdateRecordsForAsyncAll();
+	//
+	//
+	//
+	//			for (Util_ITriggerHandler handler : handlerMap.get(ASYNC_EXECUTION_ALL)) {
+	//				handler.setUpdatedRecordsFromList(updatedRecords);
+	//
+	//				Id jobId = System.enqueueJob(handler);
+	//				System.debug('Async Execution JobID: ' + jobId);
+	//			}
+	//
+	//		}
+	//	}
 
 
 }
