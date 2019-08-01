@@ -12,7 +12,7 @@
             <sorted>false</sorted>
             <value>
                 <fullName>Sync</fullName>
-                <default>true</default>
+                <default>false</default>
                 <label>Sync</label>
             </value>
             <value>

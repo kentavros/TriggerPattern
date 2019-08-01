@@ -25,15 +25,19 @@ public virtual class Util_TriggerHandlerImplementation implements Util_ITriggerH
 	 */
 	public virtual void setUpdatedRecordsFromList(SObject[] records) {
 
-		for (SObject record : records) {
+		if(records != null) {
 
-			if (record.Id != null) {
-				this.updatedRecordsMap.put(record.Id, record);
+			for (SObject record : records) {
+
+				if (record.Id != null) {
+					this.updatedRecordsMap.put(record.Id, record);
+				}
+
 			}
 
+			this.updatedRecordsList.addAll(records);
 		}
 
-		this.updatedRecordsList.addAll(records);
 	}
 
 	/*
@@ -54,8 +58,12 @@ public virtual class Util_TriggerHandlerImplementation implements Util_ITriggerH
 	 * 		Setter for new version of records. It sets records to properties (updatedRecordsList & updatedRecordsMap) from Map
 	 */
 	public virtual void setUpdatedRecordsFromMap(Map<Id, SObject> records) {
-		this.updatedRecordsMap.putAll(records);
-		this.updatedRecordsList = records.values();
+
+		if (records != null) {
+			this.updatedRecordsMap.putAll(records);
+			this.updatedRecordsList = records.values();
+		}
+
 	}
 
 	/*

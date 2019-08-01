@@ -49,6 +49,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>Util_TriggerHandlerImplementationTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>Util_TriggerPattern_API</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -72,6 +76,21 @@
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Item__c.test_numder__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Test_Coverage_Object__c.Name__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Test_Coverage_Object__c.Number__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Trigger_Handler_Assignment__mdt.IsActive__c</field>
         <readable>false</readable>
@@ -80,10 +99,17 @@
         <layout>Item__c-Item Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
+        <layout>Test_Coverage_Object__c-Test Coverage Object Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Trigger_Handler_Assignment__mdt-Trigger Handler Assignment Layout</layout>
     </layoutAssignments>
     <tabVisibilities>
         <tab>Item__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>Test_Coverage_Object__c</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <userLicense>Salesforce</userLicense>

@@ -1,5 +1,8 @@
 /*
- * Created by ashcherbanyuk on 7/25/2019.
+ * @Author: Aleksandr Shcherbanyuk
+ * @Date: 31/07/2019
+ * @Description:
+ *		Serve as the Service Layer for the needed functions of the Trigger Design Pattern
  */
 public with sharing class Util_TriggerPattern_Service {
 
@@ -13,9 +16,15 @@ public with sharing class Util_TriggerPattern_Service {
 	};
 	private static final Integer ASYNC_LIMIT = 50;
 	private static Boolean isRecursion = false;
-	public static Util_ITriggerHandler syncHandler;
+	private static Util_ITriggerHandler syncHandler;
 
-
+	/*
+	 * @Author: Aleksandr Shcherbanyuk
+	 * @Date: 31/07/2019
+	 * @Param: objectName - SObject API Name
+	 * @Description:
+	 *		Initializes processing for the execution jobs by SObject API Name
+	 */
 	public static void initObjectTriggerHandlers(String objectName) {
 		Map<String, Util_ITriggerHandler[]> handlerMap = getObjectTriggerHandlers(objectName);
 
@@ -24,7 +33,13 @@ public with sharing class Util_TriggerPattern_Service {
 
 	}
 
-
+	/*
+	 * @Author: Aleksandr Shcherbanyuk
+	 * @Date: 31/07/2019
+	 * @Param: objectName - SObject API Name
+	 * @Description:
+	 *		Serves for returning all the instances of the handlers that corresponds to the given SObject API Name.
+	 */
 	private static Map<String, Util_ITriggerHandler[]> getObjectTriggerHandlers(String objectName) {
 		Map<String, Util_ITriggerHandler[]> resultMap = new Map<String, Util_ITriggerHandler[]>();
 
@@ -50,12 +65,20 @@ public with sharing class Util_TriggerPattern_Service {
 			/*
 			 * Put your error handler here
 			 */
-			System.debug('Error - getObjectTriggerHandlers: ' + e.getMessage() + ' Line : ' + e.getLineNumber());
+			System.debug('Error - Util_TriggerPattern_Service.getObjectTriggerHandlers: ' + e.getMessage() + ' Line : ' + e.getLineNumber());
 		}
 
 		return resultMap;
 	}
 
+	/*
+	 * @Author: Aleksandr Shcherbanyuk
+	 * @Date: 31/07/2019
+	 * @Param: handlerMap - Map with handlers separated by a key (handler type) and a list handlers
+	 * @Description:
+	 *		Serves for synchronous execution, but if recursion occurs, asynchronous execution will be called with
+	 *		'Async After SObject Sync Update' type
+	 */
 	private static void executeHandlerSynchronously(Map<String, Util_ITriggerHandler[]> handlerMap) {
 		if (handlerMap.containsKey(SYNC)) {
 			//We use only one sync handler
@@ -102,14 +125,32 @@ public with sharing class Util_TriggerPattern_Service {
 
 	}
 
+	/*
+	 * @Author: Aleksandr Shcherbanyuk
+	 * @Date: 31/07/2019
+	 * @Param: handlerMap - Map with handlers separated by a key (handler type) and a list handlers
+	 * @Param: asyncKey - The key by which the list of handlers will be selected
+	 * @Description:
+	 *		Serves to search for the required list of handlers by the given key (asyncKey) and will execute an asynchronous start
+	 */
 	private static void executeAsyncHandler(Map<String, Util_ITriggerHandler[]> handlerMap, String asyncKey) {
 
 		if (handlerMap.containsKey(asyncKey) && Trigger.isAfter) {
-			executeQueueable(handlerMap.get(asyncKey), getUpdateRecordsForAsyncAll());
+			executeQueueable(handlerMap.get(asyncKey), getUpdateRecordsForAsyncJob());
 		}
 
 	}
 
+
+	/*
+	 * @Author: Aleksandr Shcherbanyuk
+	 * @Date: 31/07/2019
+	 * @Param: handlerList - List with handlers
+	 * @Param: updatedRecords - Updated records in the process of synchronous operation of a trigger,
+	 * 							for transferring them to instances of asynchronous execution
+	 * @Description:
+	 *		Starts asynchronous execution of handlers (Queueable)
+	 */
 	private static void executeQueueable(Util_ITriggerHandler[] handlerList, SObject[] updatedRecords) {
 
 		for (Util_ITriggerHandler handler : handlerList) {
@@ -119,8 +160,15 @@ public with sharing class Util_TriggerPattern_Service {
 		}
 	}
 
-
-	private static SObject[] getUpdateRecordsForAsyncAll() {
+	/*
+	 * @Author: Aleksandr Shcherbanyuk
+	 * @Date: 31/07/2019
+	 * @Description:
+	 *		Searches for and sets the latest updated version of records.
+	 *		If the records were passed to the synchronous handler, then these records are selected.
+	 *		If there are no records, Trigger.new list will be selected
+	 */
+	private static SObject[] getUpdateRecordsForAsyncJob() {
 		SObject[] updatedRecords = new SObject[]{};
 
 		if (syncHandler != null) {
@@ -138,6 +186,14 @@ public with sharing class Util_TriggerPattern_Service {
 		return updatedRecords;
 	}
 
+	/*
+	 * @Author: Aleksandr Shcherbanyuk
+	 * @Date: 31/07/2019
+	 * @Param: assignments - List with Trigger_Handler_Assignment__mdt custom metadata records
+	 * @Description:
+	 *		Serves to creates Map with handlers separated by a key (handler type) and a list handlers
+	 *		and return this map
+	 */
 	private static Map<String, Trigger_Handler_Assignment__mdt[]> getAssignmentsByExecutionType(Trigger_Handler_Assignment__mdt[] assignments) {
 		Map<String, Trigger_Handler_Assignment__mdt[]> assignmentsByType = new Map<String, Trigger_Handler_Assignment__mdt[]>();
 		Integer asyncAssigment = 0;

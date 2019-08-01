@@ -1,8 +1,18 @@
 /*
- * Created by ashcherbanyuk on 7/25/2019.
+ * @Author: Aleksandr Shcherbanyuk
+ * @Date: 31/07/2019
+ * @Description:
+ *		Serves as the Data Accessor layer of the 'Trigger Pattern' tool
  */
 public without sharing class Util_TriggerPattern_DataAccesssor {
 
+	/*
+	 * @Author: Aleksandr Shcherbanyuk
+	 * @Date: 31/07/2019
+	 * @Param: objectName - SObject API Name
+	 * @Description:
+	 * 		Retrieve all the active assignments of the trigger handlers with the object that corresponds to the given object API name.
+	 */
 	public static Trigger_Handler_Assignment__mdt[] getObjectTriggerHandlersAssignments(String objectName) {
 
 		return [

@@ -1,15 +1,34 @@
 /*
- * Created by ashcherbanyuk on 7/25/2019.
+ * @Author: Aleksandr Shcherbanyuk
+ * @Date: 31/07/2019
+ * @Description:
+ *		API for 'Trigger Pattern'. It provides functionality for retrieving the handlers instances that are assigned to an object
  */
+
 public class Util_TriggerPattern_API {
 
-	private static String objectName = setObjectName();
+	/*
+	 * objectName - Object Api Name
+	 */
+	private static String objectName = getObjectName();
 
+	/*
+	 * @Author: Aleksandr Shcherbanyuk
+	 * @Date: 31/07/2019
+	 * @Description:
+	 * 		Implements the general template that a trigger can have to execute all the handlers.
+	 */
 	public static void executeObjectTriggerHandlers() {
 		Util_TriggerPattern_Service.initObjectTriggerHandlers(objectName);
 	}
 
-	private static String setObjectName() {
+	/*
+	 * @Author: Aleksandr Shcherbanyuk
+	 * @Date: 31/07/2019
+	 * @Description:
+	 * 		Get SObject Type (Api Name) for query a set of handlers
+	 */
+	private static String getObjectName() {
 
 		if (objectName == null) {
 

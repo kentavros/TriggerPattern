@@ -152,12 +152,12 @@
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-    <label>Item</label>
+    <label>Test Coverage Object</label>
     <nameField>
-        <label>Item Name</label>
+        <label>Test Coverage Object Name</label>
         <type>Text</type>
     </nameField>
-    <pluralLabel>Items</pluralLabel>
+    <pluralLabel>Test Coverage Objects</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>

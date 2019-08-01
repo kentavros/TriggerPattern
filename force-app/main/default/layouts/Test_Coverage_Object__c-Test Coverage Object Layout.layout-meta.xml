@@ -12,11 +12,11 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Item_Description__c</field>
+                <field>Name__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Item_Number__c</field>
+                <field>Number__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
