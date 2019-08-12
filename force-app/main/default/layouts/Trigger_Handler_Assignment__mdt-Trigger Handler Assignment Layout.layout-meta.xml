@@ -28,10 +28,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
-                <field>SequenceNumber__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Required</behavior>
                 <field>Handler_Execution__c</field>
             </layoutItems>
         </layoutColumns>
