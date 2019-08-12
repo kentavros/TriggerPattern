@@ -17,10 +17,6 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>Util_TriggerHandlerImplementationTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>Util_TriggerPattern_API</apexClass>
         <enabled>true</enabled>
     </classAccesses>
